@@ -30,7 +30,7 @@ class VAE(object):
         reconst_xmean = _decoder_h(d_decoder_h(decoder_h(z)))
         
         self.vae = Model(input_x, reconst_xmean)
-        self.encoder = Model(input_x, z_mean)
+        self.encoder = Model(input_x, z)
         decoded_xmean = _decoder_h(d_decoder_h(decoder_h(input_z)))
         self.decoder = Model(input_z, decoded_xmean)
         
